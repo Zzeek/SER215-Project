@@ -1,13 +1,27 @@
+// Otter game
+// Main window class
+// By Doug Carroll and Jon Jordan
+
 package com.mygdx.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+
 public class OtterGame extends Game {
 	
+	int HEIGHT = 480;
+	int WIDTH = 800;
 	SpriteBatch batch;
 	BitmapFont font;        // Default font
+	
+	
+	// Getter for screen height
+	public int getHeight(){return HEIGHT;}
+	// Getter for screen width
+	public int getWidth(){return WIDTH;}
+	
 	
 	// Creates the game
 	public void create () {
@@ -16,7 +30,8 @@ public class OtterGame extends Game {
 		batch = new SpriteBatch();
 		
 		// Font
-		font = new BitmapFont();
+		fonts();
+		
 		
 		// Run Main Menu
 		this.setScreen(new MainMenu(this));
@@ -34,4 +49,10 @@ public class OtterGame extends Game {
         batch.dispose();
         font.dispose();
     }
+	
+	
+	void fonts(){
+		// Fonts
+		font = new BitmapFont();
+	}
 }

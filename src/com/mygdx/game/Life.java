@@ -1,19 +1,29 @@
+// Otter game
+// Player lives
+// By Doug Carroll and Jon Jordan
+
 package com.mygdx.game;
 
 import com.badlogic.gdx.graphics.Texture;
 
 class Life {
+	final OtterGame game;
+	Texture lifeSprite; 						// Life sprite
+	private int yCoord = 400;
 	
-	Texture lifeTexture;
+	public Life(OtterGame gam) {
+		game = gam;
+		lifeSprite = new Texture("life.png"); // Life sprite
+	}
 	
-	void spawn(){}
-	
-	void display(){}
-	
-	void addlife(){}
-	
-	void removelife(){}
-	
-	void dead(){}
+	void display(int xCoord){
+		
+		game.batch.draw(lifeSprite, xCoord, yCoord);
+	}
+
+	public void dispose() {
+		lifeSprite.dispose();
+		
+	}
 	
 }
